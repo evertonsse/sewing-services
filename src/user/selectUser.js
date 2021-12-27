@@ -15,9 +15,8 @@ const selectUser = async (request, response, name) => {
 
   } catch (err) {
 
-    return response.json({message: err.message});
+    return response.status(500).json({message: err.message});
   }
-
 }
 
 module.exports = selectUser;

@@ -20,6 +20,4 @@ const createUser = async (request, response) => {
     }
 }
 
-
-
 module.exports = createUser;
