@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const routes = require('./routes.js')
+const userRoutes = require('./routes/userRoutes');
+const serviceRoutes = require('./routes/serviceRoutes');
 
 
 app = express();
 app.use(bodyParser.json());
-app.use(routes)
+app.use(serviceRoutes)
+app.use(userRoutes)
 
 app.listen(3333)
