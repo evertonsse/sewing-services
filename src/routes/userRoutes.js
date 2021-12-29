@@ -2,11 +2,10 @@
 const express = require('express');
 const userRoutes = express.Router();
 const createUser = require('../user/createUser');
-const selectUser = require('../user/selectUser')
-const updateUser = require('../user/updateUser')
-const changePassword = require('../user/changePassword')
-
-
+const selectUser = require('../user/selectUser');
+const updateUser = require('../user/updateUser');
+const changePassword = require('../user/changePassword');
+const deleteUser = require("../user/deleteUser");
 
 //select user 
 userRoutes.get("/user/:name", async (request, response) => {
@@ -19,15 +18,19 @@ userRoutes.put("/user", (request, response) => {
     updateUser(request, response)
 })
 
-
 //create User
 userRoutes.post("/user", (request, response) => {
     createUser(request, response);
 });
-//change Password
 
+//change Password
 userRoutes.put("/changePassword", (request, response) => {
     changePassword(request, response)
+})
+
+// delete user 
+userRoutes.delete("/deleteuser", (request, response) => {
+    deleteUser(request, response) 
 })
 
 
